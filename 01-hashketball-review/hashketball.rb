@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -115,6 +117,27 @@ def game_hash
   }
 end
 
-def num_points_scored
+def get_all_players
+  # returns flattened array of all the players
+  game_hash.collect do |team_location, team_hash|
+    team_hash[:players]
+  end.flatten
+end
 
+def get_player(player_name)
+  get_all_players.find do |player|
+    player[:player_name] == player_name
+  end
+end
+
+def get_player_stat(player_name, stat)
+  get_player(player_name)[stat]
+end
+
+def num_points_scored(player_name)
+  get_player_stat(player_name, :points)
+end
+
+def shoe_size(player_name)
+  get_player(player_name)[:shoe]
 end
