@@ -8,11 +8,6 @@ class User
 
     def tweets
         # returns array of all tweets belonging to this User
-
-        # look through all the tweets
-        # if the tweet's user is the one we are looking for
-        # put it in an array
-        # return the array
         Tweet.all.select {|tweet| tweet.user == self}
     end
 
@@ -23,5 +18,3 @@ class User
     end
 end
 
-# soda_mom = User.new("Soda Mom")
-# soda_mom.post_tweet("I love Dr Pepper")
