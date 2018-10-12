@@ -24,5 +24,17 @@ class Tweet
             puts tweet.message
         end
     end
+
+    def likers
+        # returns a collection of all the
+        # Users who have liked this tweet
+
+        # look at all likes
+        # select/find the ones that have this tweet
+        likes = Like.all.select {|like| like.tweet==self}
+        # collect the users
+        likes.collect {|like| like.user}
+    end
+
 end
 
