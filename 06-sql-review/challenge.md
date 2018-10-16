@@ -9,15 +9,41 @@
 
 1. Write the SQL to return all of the rows in the artists table?
 
+`SELECT * FROM artists;`
+
 2. Write the SQL to select the artist with the name "Black Sabbath"
+
+`SELECT * FROM artists WHERE name="Black Sabbath";`
+`SELECT name FROM artists WHERE name="Black Sabbath";`
 
 3. Write the SQL to create a table named 'fans' with an autoincrementing ID that's a primary key and a name field of type text
 
+```sql
+CREATE TABLE fans (
+    id INTEGER PRIMARY KEY, 
+    name TEXT);
+```
+
 4. Write the SQL to alter the fans table to have a ArtistId column type integer
+
+```sql
+ALTER TABLE fans ADD COLUMN ArtistID INTEGER;
+```
 
 5. Write the SQL to add yourself as a fan of the Black Eyed Peas? ArtistId **169**
 
+```sql
+
+INSERT INTO fans (name, ArtistID) VALUES ("Jenny", 169)
+```
+
 6. Write the SQL to update your name in the fans table to be a new name
+
+```sql
+
+UPDATE fans SET name = "Nick" where id=1
+
+```
 
 7. Write the SQL to return fans that are not fans of the Black Eyed Peas.
 
