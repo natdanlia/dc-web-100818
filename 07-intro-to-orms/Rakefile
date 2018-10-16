@@ -5,13 +5,12 @@ task :console do
     Pry.start
 end
 
-desc "Say hello"
-task :hi do
-    puts "Hi everybody!"
+desc "Says hi to the class"
+task :say_hi do
+    puts "Hello everyone"
 end
 
-
-desc "Set up database"
+desc "set up database"
 task :db_setup do
     book_sql = <<-SQL
         CREATE TABLE IF NOT EXISTS books(
@@ -20,13 +19,12 @@ task :db_setup do
             author_id integer
         );
     SQL
-    DB.execute(book_sql)
-
-    author_sql = <<-SQL
+    author_sql = <<-SQL 
         CREATE TABLE IF NOT EXISTS authors(
             id integer PRIMARY KEY,
-            name varchar(255)
-        );
-    SQL
+            name varchar(255));
+        SQL
+    DB.execute(book_sql)
     DB.execute(author_sql)
+
 end
