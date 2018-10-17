@@ -11,6 +11,7 @@ class Author
     def self.create(name)
         author = Author.new(name)
         author.save
+        author
     end
 
     def self.all
@@ -23,8 +24,15 @@ class Author
 
     def save
         # write to database
-        sql = "INSERT INTO authors (name) values (?)"
-        DB.execute(sql, self.name)
+        if self.id.nil?
+            sql = "INSERT INTO authors (name) values (?)"
+            DB.execute(sql, self.name)
+            sql = "SELECT last_insert_rowid()"
+            @id = DB.execute(sql)[0][0]
+        else
+            sql = "UPDATE authors SET (name) = ? WHERE id = ?"
+            DB.execute(sql, self.name, self.id)
+        end
     end
 
     def self.find(id)
@@ -34,10 +42,26 @@ class Author
         make_object_from_row(results[0])
     end
 
+    def self.find_by_name(name)
+        sql = <<-SQL 
+            SELECT * FROM authors WHERE name = ? 
+        SQL
+        results = DB.execute(sql, name)
+        make_object_from_row(results[0])
+
+    end
+
     def self.make_object_from_row(row)
         author_id = row[0]
         author_name = row[1]
         Author.new(author_name, author_id)
+    end
+
+    def delete
+        sql = <<-SQL
+            DELETE FROM authors where id = ?
+        SQL
+        DB.execute(sql, self.id)
     end
 end
 
