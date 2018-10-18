@@ -60,7 +60,7 @@ http://api.rubyonrails.org/classes/ActiveRecord/Tasks/DatabaseTasks.html
 Gemfile
     gem 'activerecord'
     gem 'sinatra-activerecord'
-[INCOMPLETE]
+[PLUS OTHERS]
 
 ```rb
 config/database.yml
