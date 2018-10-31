@@ -1,0 +1,18 @@
+<form action="/authors" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name">
+    <label for="birthday">Birthday</label>
+    <input type="date" name="birthday">
+
+    <div>
+        <h3>Books:</h3>
+
+        <input type="text" name="book[][title]" placeholder="title">
+        <input type="text" name="book[][snippet]" placeholder="snippet">
+        <input type="text" name="book[][title]" placeholder="title">
+        <input type="text" name="book[][snippet]" placeholder="snippet">
+        <input type="text" name="book[][title]" placeholder="title">
+        <input type="text" name="book[][snippet]" placeholder="snippet">
+    </div>
+    <input type="submit" name="Create New Author">
+</form>

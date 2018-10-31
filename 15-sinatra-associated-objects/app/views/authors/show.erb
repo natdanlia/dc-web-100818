@@ -1,0 +1,11 @@
+<h1>Homepage of <%= @author.name %></h1>
+
+<% if !@author.birthday.nil? %>
+    <h2>Birthdate: <%= @author.birthday %></h2>
+<% end %>
+
+<ul>
+    <% @author.books.each do |book| %>
+        <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+    <% end %>
+</ul>
