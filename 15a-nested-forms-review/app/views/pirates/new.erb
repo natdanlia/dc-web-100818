@@ -1,0 +1,27 @@
+<form action="/pirates" method="post">
+  <h2>Pirate: </h2>
+  <label>Pirate Name: </label>
+  <input type="text" name="pirate[name]">
+  <label>Pirate Height: </label>
+  <input type="text" name="pirate[height]">
+  <label>Pirate Weight: </label>
+  <input type="text" name="pirate[weight]">
+  <br>
+  <h2>Ships:</h2>
+  <h3>Ship 1</h3>
+  <label>Name: </label>
+  <input type="text" name="pirate[ships][][name]"> <% #don't put a number in that empty brackets!! %>
+  <label>Type: </label>
+  <input type="text" name="pirate[ships][][ship_type]">
+  <label>Booty: </label>
+  <input type="text" name="pirate[ships][][booty]">
+  <h3>Ship 2</h3>
+  <label>Name: </label>
+  <input type="text" name="pirate[ships][][name]">
+  <label>Type: </label>
+  <input type="text" name="pirate[ships][][ship_type]">
+  <label>Booty: </label>
+  <input type="text" name="pirate[ships][][booty]">
+  <br>
+  <input type="submit" value="Create New Pirate">
+</form>

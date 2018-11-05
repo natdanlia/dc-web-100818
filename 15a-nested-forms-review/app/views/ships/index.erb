@@ -1,0 +1,6 @@
+<h1> Welcome to the Ships Page!</h1>
+
+<ul>
+<%@ship.each do |pirate| %>
+  <li><a href="/pirates/<%=ship.id%>"><%=ship.name%></a></li>
+</ul>
