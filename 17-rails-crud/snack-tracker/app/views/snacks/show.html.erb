@@ -4,4 +4,8 @@
     <div>Calories: <%= @snack.calories %></div>
     <div>Deliciousness: <%= @snack.deliciousness %></div>
 
+<%= form_tag @snack, method: "DELETE" do %>
+    <%= submit_tag "Delete this Snack" %>
+<% end %>
+
 <%= link_to "Index Page", snacks_path %>
