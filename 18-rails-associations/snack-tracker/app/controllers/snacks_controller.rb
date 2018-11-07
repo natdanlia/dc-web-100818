@@ -39,7 +39,7 @@ class SnacksController < ApplicationController
   private
 
   def snack_strong_params
-    return params.require(:snack).permit(:name, :deliciousness, :calories)
+    return params.require(:snack).permit(:name, :deliciousness, :calories, :retailer_id)
   end
 
   def get_snack

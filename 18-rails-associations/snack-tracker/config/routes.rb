@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   # get "/foods/test", to: "snacks#test", as: "the_test"
   root "snacks#home"
   resources :snacks
+  resources :retailers, only: [:index, :show, :new, :create]
 end
