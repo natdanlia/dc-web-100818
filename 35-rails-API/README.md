@@ -31,4 +31,6 @@
 
 ### Transition to Project Mode
 - Project Pitches are any time tomorrow morning (of today if you want)
+- Two models, preferably one should be full CRUD
+- OOJS is highly encouraged, but not mandatory
 [Setting Up Your Mod 3 Project](https://github.com/learn-co-curriculum/mod3-project-week-setup-example)
