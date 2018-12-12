@@ -27,7 +27,7 @@ class App extends React.Component {
   // passed as a prop to the <Filters /> component, invoked when the 'Find Pets' button is clicked
   fetchPets = () => {
     let filterType = this.state.filters.type;
-    if (filterType == "all") {
+    if (filterType === "all") {
       fetch(`/api/pets`)
         .then(res => res.json())
         .then(json => this.setState({ pets: json }));
