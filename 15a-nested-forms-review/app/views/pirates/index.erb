@@ -1,0 +1,8 @@
+<h1> Welcome to the Pirates Page!</h1>
+
+<h2>All Pirates:</h2>
+<ul>
+<%@pirates.each do |pirate| %>
+  <li><a href="/pirates/<%=pirate.id%>"><%=pirate.name%></a></li>
+<%end%>
+</ul>

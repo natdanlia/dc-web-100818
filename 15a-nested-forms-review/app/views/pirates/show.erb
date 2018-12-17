@@ -1,0 +1,11 @@
+<h1><%= @pirate.name %></h1>
+
+<p>Height: <%=@pirate.height %></p>
+<p>Weight: <%=@pirate.weight %></p>
+
+<h2>Ships:</h2>
+<ul>
+  <% @pirate.ships.each do |ship|%>
+  <li><a href="/ships/<%=ship.id%>"><%=ship.name%></a></li>
+  <%end %>
+</ul>

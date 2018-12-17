@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Book Library</title>
+    </head>
+    <body>
+        <h1>All my books</h1>
+
+        <ul>
+            <% @books.each do |book| %>
+                <li>
+                    <a href="/books/<%= book.id %>"><%= book.title %></a>
+                </li>
+            <% end %>
+        </ul>
+
+    </body>
+</html>
+
+
+
+
